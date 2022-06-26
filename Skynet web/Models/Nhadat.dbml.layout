@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 10.875" name="Nhadat">
+  <DataContextMoniker Name="/NhadatDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e9d52920-0013-4f2e-9930-e546cf62a966" absoluteBounds="3.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/NhadatDataContext/DuAN1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2453902d-029a-4412-bdc8-94a4fb7d0a41" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a34e72a7-e6da-4794-8892-174566fff709" absoluteBounds="6.5, 4.5, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/NhadatDataContext/House" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d6f6f03-d2c8-4e3a-9859-9f9f319fc113" absoluteBounds="6.515, 4.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8e81c02-cf04-415e-8e67-92e646dc301f" absoluteBounds="6.5, 2.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/NhadatDataContext/Imageduan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e00301a3-3ead-4266-8821-f055900f5cb9" absoluteBounds="6.515, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d088135f-3617-42de-bedc-a5a407eebd16" absoluteBounds="9.25, 5.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/NhadatDataContext/Imagehouse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1e59cb2-f4d6-4a15-ae94-29d07371115b" absoluteBounds="9.265, 5.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7d6e519-e08e-4642-ab7f-3b93dec8a4a2" absoluteBounds="1, 8.25, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/NhadatDataContext/Nhadautu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0968f6e4-d954-4cdb-9f1f-476e91c4eb36" absoluteBounds="1.0150000000000001, 8.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6863fe33-62bc-48ad-af08-7dd8f08c4cd9" absoluteBounds="0.75, 5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/NhadatDataContext/Taikhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60ced446-e80f-4274-a6a4-450aae76908b" absoluteBounds="0.765, 5.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d7953985-1620-438e-bf89-b9ca160bd2be" absoluteBounds="3.5, 5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/NhadatDataContext/Tintuc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35c5a7aa-dee8-4f24-8a37-488f08f16252" absoluteBounds="3.515, 5.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.65625 : 3.48240397135417); (5.65625 : 4.71875); (6.5 : 4.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NhadatDataContext/DuAN1/DuAN1_House" />
+      <nodes>
+        <classShapeMoniker Id="e9d52920-0013-4f2e-9930-e546cf62a966" />
+        <classShapeMoniker Id="a34e72a7-e6da-4794-8892-174566fff709" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 2.86620198567708); (6.5 : 2.86620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NhadatDataContext/DuAN1/DuAN1_Imageduan" />
+      <nodes>
+        <classShapeMoniker Id="e9d52920-0013-4f2e-9930-e546cf62a966" />
+        <classShapeMoniker Id="f8e81c02-cf04-415e-8e67-92e646dc301f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 6.06814697265625); (9.25 : 6.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NhadatDataContext/House/House_Imagehouse" />
+      <nodes>
+        <classShapeMoniker Id="a34e72a7-e6da-4794-8892-174566fff709" />
+        <classShapeMoniker Id="d088135f-3617-42de-bedc-a5a407eebd16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.90625 : 8.25); (2.90625 : 2.11620198567708); (3.75 : 2.11620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NhadatDataContext/Nhadautu/Nhadautu_DuAN1" />
+      <nodes>
+        <classShapeMoniker Id="b7d6e519-e08e-4642-ab7f-3b93dec8a4a2" />
+        <classShapeMoniker Id="e9d52920-0013-4f2e-9930-e546cf62a966" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 5); (1.75 : 4.5781225); (2.82291666666667 : 4.5781225 : JumpStart); (2.98958333333333 : 4.5781225 : JumpEnd); (5.57291666666667 : 4.5781225 : JumpStart); (5.73958333333333 : 4.5781225 : JumpEnd); (6.5 : 4.5781225)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NhadatDataContext/Taikhoan/Taikhoan_House" />
+      <nodes>
+        <classShapeMoniker Id="6863fe33-62bc-48ad-af08-7dd8f08c4cd9" />
+        <classShapeMoniker Id="a34e72a7-e6da-4794-8892-174566fff709" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.17390055338542); (2.82291666666667 : 6.17390055338542 : JumpStart); (2.98958333333333 : 6.17390055338542 : JumpEnd); (3.5 : 6.17390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NhadatDataContext/Taikhoan/Taikhoan_Tintuc" />
+      <nodes>
+        <classShapeMoniker Id="6863fe33-62bc-48ad-af08-7dd8f08c4cd9" />
+        <classShapeMoniker Id="d7953985-1620-438e-bf89-b9ca160bd2be" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

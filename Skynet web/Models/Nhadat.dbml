@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Nhadat" Class="NhadatDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=Nhadat;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NhadatConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DuAN1" Member="DuAN1s">
+    <Type Name="DuAN1">
+      <Column Name="IDDuAn" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="khoiduan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sonha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="House" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mota" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="IDnhadautu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vitri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tenduan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Giaban" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Giathue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DuAN1_House" Member="Houses" ThisKey="IDDuAn" OtherKey="idduan" Type="House" />
+      <Association Name="DuAN1_Imageduan" Member="Imageduans" ThisKey="IDDuAn" OtherKey="IDDuAn" Type="Imageduan" />
+      <Association Name="Nhadautu_DuAN1" Member="Nhadautu" ThisKey="IDnhadautu" OtherKey="idnhadautu" Type="Nhadautu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.House" Member="Houses">
+    <Type Name="House">
+      <Column Name="IDHouse" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tennhadat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Hinh" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="GiaBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tenduan" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Gioithieu" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Sophong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dientich" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Vitri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Giathue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idduan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idtaikhoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="House_Imagehouse" Member="Imagehouse" ThisKey="IDHouse" OtherKey="IDimageshouse" Type="Imagehouse" Cardinality="One" />
+      <Association Name="DuAN1_House" Member="DuAN1" ThisKey="idduan" OtherKey="IDDuAn" Type="DuAN1" IsForeignKey="true" />
+      <Association Name="Taikhoan_House" Member="Taikhoan" ThisKey="idtaikhoan" OtherKey="IDTaiKhoan" Type="Taikhoan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Imageduan" Member="Imageduans">
+    <Type Name="Imageduan">
+      <Column Name="IDImageDuAn" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDDuAn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="DuAN1_Imageduan" Member="DuAN1" ThisKey="IDDuAn" OtherKey="IDDuAn" Type="DuAN1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Imagehouse" Member="Imagehouses">
+    <Type Name="Imagehouse">
+      <Column Name="IDimageshouse" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IDhouse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="House_Imagehouse" Member="House" ThisKey="IDimageshouse" OtherKey="IDHouse" Type="House" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nhadautu" Member="Nhadautus">
+    <Type Name="Nhadautu">
+      <Column Name="idnhadautu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tennhadautu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="hinhanh" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mota" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="sdt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ngaydautu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Nhadautu_DuAN1" Member="DuAN1s" ThisKey="idnhadautu" OtherKey="IDnhadautu" Type="DuAN1" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Taikhoan" Member="Taikhoans">
+    <Type Name="Taikhoan">
+      <Column Name="IDTaiKhoan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ngaysinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mota" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Taikhoan_House" Member="Houses" ThisKey="IDTaiKhoan" OtherKey="idtaikhoan" Type="House" />
+      <Association Name="Taikhoan_Tintuc" Member="Tintucs" ThisKey="IDTaiKhoan" OtherKey="idtaikhoan" Type="Tintuc" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tintuc" Member="Tintucs">
+    <Type Name="Tintuc">
+      <Column Name="IDTinTuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tieude" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="thoigiandang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dangboi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="noidung" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="hinhanh" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="vitri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idtaikhoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Taikhoan_Tintuc" Member="Taikhoan" ThisKey="idtaikhoan" OtherKey="IDTaiKhoan" Type="Taikhoan" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

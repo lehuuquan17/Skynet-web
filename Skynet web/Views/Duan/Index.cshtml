@@ -1,0 +1,152 @@
+﻿@model IEnumerable<Skynet_web.Models.DuAN1>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main">
+    <h2>Thông tin Dự Án</h2>
+
+    <p>
+        <a class="btn btn-success"
+           @Html.ActionLink("Thêm +", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Khối dự án
+            </th>
+            <th>
+                Số nhà
+            </th>
+            <th>
+                House
+            </th>
+            <th>
+                Mô ta
+            </th>
+            <th>
+                Mã nhà đầu tư
+            </th>
+            <th>
+                Vị trí
+            </th>
+            <th>
+                Tên dự án
+            </th>
+            <th>
+                Giá Bán
+            </th>
+            <th>
+                Giá thuê
+            </th>
+
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.khoiduan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sonha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.House)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mota)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDnhadautu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vitri)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tenduan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Giaban)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Giathue)
+                </td>
+                <td>
+                    <a class="btn btn-success"
+                       @Html.ActionLink("Sửa", "Edit", new { id = item.IDDuAn })
+                   <br><br>
+                   <a class="btn btn-danger"
+                   @Html.ActionLink("Xóa", "Delete", new { id = item.IDDuAn })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: "Lato", sans-serif;
+            }
+
+            .sidenav {
+                height: 100%;
+                width: 160px;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                padding-top: 20px;
+            }
+
+                .sidenav a {
+                    padding: 6px 8px 6px 16px;
+                    text-decoration: none;
+                    font-size: 25px;
+                    color: #818181;
+                    display: block;
+                }
+
+                    .sidenav a:hover {
+                        color: #f1f1f1;
+                    }
+
+            .main {
+                margin-left: 160px; /* Same as the width of the sidenav */
+                font-size: 15px; /* Increased text to enable scrolling */
+                padding: 0px 10px;
+            }
+
+            screen and (max-height: 450px) {
+                .sidenav
+
+            {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="sidenav">
+            <li>@Html.ActionLink("Nhà Đất", "Index", "Quanly")</li>
+            <li>@Html.ActionLink("Dự Án", "Index", "DuAn")</li>
+            <li>@Html.ActionLink("Tin Tức", "Index", "TinTuc")</li>
+            <li>@Html.ActionLink("Nhà đầu tư", "Index", "Nhadautu")</li>
+        </div>
+
+
+    </body>

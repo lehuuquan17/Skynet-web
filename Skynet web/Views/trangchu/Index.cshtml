@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Skynet_web.Models.House>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            #navbar a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                #navbar a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                #navbar a.active {
+                    background-color: #04AA6D;
+                    color: white;
+                }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+            .sticky + .content {
+                padding-top: 60px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+       
+    </div>
+
+    <div id="navbar">
+        <a class="active" href="javascript:void(0)">0394146964</a>
+        <a href="javascript:void(0)">Nhà đất</a>
+        <a href="javascript:void(0)">Dự án</a>
+    </div>
+
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel panel-heading">
+                    <strong>@item.Tennhadat</strong>
+                </div>
+                <div class="panel-body">
+                    <p><strong>Tên nhà : </strong>@item.Tennhadat</p>
+                    <p><strong>Diện tích : </strong>@item.Dientich</p>
+                    <p><strong>Giá thuê : </strong>@item.Giathue</p>
+                    <p><strong>Giá bán : </strong>@item.GiaBan</p>
+                    <p><img src="@item.Hinh" width="270S" alt="thumnail" /></p>
+                </div>
+                <div class="panel-footer clearfix">
+                    <div class="pull-right">
+                        <div class="Dangchieu">
+                           <a class="btn btn-success" href="@Url.Action("Detail","Quanly",new {@id = item.IDHouse,@strURL = Request.Url.ToString()} )">Xem thông tin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>}
+    </table>

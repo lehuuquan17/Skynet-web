@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Skynet_web.Models.Nhadautu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="main">
+    <h2>Thông tin Nhà đầu tư</h2>
+
+    <p>
+        <a class="btn btn-success"
+           @Html.ActionLink("Thêm +", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Tên chủ đầu tư
+            </th>
+            <th>
+                Hình ảnh
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Ngày đầu tư
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tennhadautu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hinhanh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mota)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sdt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.diachi)
+                </td>
+                <td>
+                    <a class="btn btn-success"
+                       @Html.ActionLink("Sửa", "Edit", new { id = item.idnhadautu })
+                   <br><br>
+                   <a class="btn btn-danger"
+                   @Html.ActionLink("Xóa", "Delete", new { id = item.idnhadautu })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: "Lato", sans-serif;
+            }
+
+            .sidenav {
+                height: 100%;
+                width: 160px;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                padding-top: 20px;
+            }
+
+                .sidenav a {
+                    padding: 6px 8px 6px 16px;
+                    text-decoration: none;
+                    font-size: 25px;
+                    color: #818181;
+                    display: block;
+                }
+
+                    .sidenav a:hover {
+                        color: #f1f1f1;
+                    }
+
+            .main {
+                margin-left: 160px; /* Same as the width of the sidenav */
+                font-size: 15px; /* Increased text to enable scrolling */
+                padding: 0px 10px;
+            }
+
+            screen and (max-height: 450px) {
+                .sidenav
+
+            {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="sidenav">
+            <li>@Html.ActionLink("Nhà Đất", "Index", "Quanly")</li>
+            <li>@Html.ActionLink("Dự Án", "Index", "DuAn")</li>
+            <li>@Html.ActionLink("Tin Tức", "Index", "TinTuc")</li>
+            <li>@Html.ActionLink("Nhà đầu tư", "Index", "Nhadautu")</li>
+        </div>
+
+
+    </body>

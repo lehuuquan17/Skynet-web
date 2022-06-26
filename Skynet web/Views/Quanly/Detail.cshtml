@@ -1,0 +1,107 @@
+﻿@model Skynet_web.Models.House
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>House</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tennhadat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tennhadat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenduan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenduan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gioithieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gioithieu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sophong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sophong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dientich)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dientich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vitri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vitri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Giathue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giathue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idduan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idduan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idtaikhoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idtaikhoan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDHouse }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
